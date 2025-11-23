@@ -1,0 +1,272 @@
+html {
+  background: #e1e4ea !important; /* slightly darker than your current design */
+}
+
+body {
+  background: transparent !important;
+}
+
+
+
+/******************************************
+ * About page layout
+ ******************************************/
+
+ /* FORCE ABOUT PAGE TO HAVE ITS OWN BACKGROUND */
+
+.page-about {
+    background: none !important;
+}
+
+.page-about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+/* main just stacks sections from the top, no vertical centering */
+.page-about main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+/* KILL STRAY VERTICAL OVERFLOW BLOCK */
+.page-about {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.page-about section {
+  background: transparent !important;
+}
+
+.page-about__gallery figure
+.page-about__gallery figure img
+
+/******************************************
+ * Hero sections
+ ******************************************/
+
+/* Top About hero */
+.page-about .page-hero[data-section="about-hero"] {
+  padding-top: calc(var(--header-height) + 24px);
+  padding-bottom: 24px;
+}
+
+/* Testimonials “hero” header under the body copy */
+.page-about .page-hero--testimonials {
+  padding-top: 32px;
+  padding-bottom: 12px;
+}
+
+/******************************************
+ * About body grid
+ ******************************************/
+
+.page-about .page-content {
+  padding-bottom: 32px; /* tighter so testimonials sit closer */
+}
+
+.page-content__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Text column */
+
+.page-about__copy {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-about__copy p {
+  line-height: 1.6;
+}
+
+/* Heading inside body copy */
+
+.page-about .page-content h2 {
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  margin: 24px 0 8px;
+}
+
+/* Quote */
+
+.page-about blockquote {
+  margin: 12px 0 16px;
+  padding-left: 18px;
+  border-left: 2px solid rgba(23, 41, 84, 0.4);
+  font-style: italic;
+}
+
+/* Tagline */
+
+.page-about__tagline {
+  font-weight: 600;
+}
+
+/******************************************
+ * Gallery column + CTA
+ ******************************************/
+
+.page-about__gallery {
+  max-width: 380px;
+  margin-left: auto;
+  display: flex;              /* stack images + button */
+  flex-direction: column;
+  align-items: center;        /* centre the whole block */
+}
+
+.page-about__gallery #gallery {
+  padding: 0;
+  width: 100%;
+}
+
+.page-about__gallery figure {
+  margin: 0 0 16px;
+}
+
+.page-about__gallery figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-about__gallery figure figcaption {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* CTA button stack – centred under both photos */
+
+.page-about__cta {
+  margin-top: 18px;
+  width: 100%;
+}
+
+.page-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre button */
+}
+
+/******************************************
+ * Testimonials section (Owl)
+ ******************************************/
+
+/* tighten padding so there is no big grey gap above footer */
+.page-about .testimonials {
+  padding: 40px 0 32px;
+}
+
+/******************************************
+ * Footer tweaks on About only
+ ******************************************/
+
+.page-about .footer-refresh {
+  font-size: 14px;
+}
+
+/* slightly smaller, tidy copyright row */
+.page-about .footer-bottom-wrapper {
+  font-size: 12px;
+}
+
+.page-about .footer-bottom-wrapper span[data-footer-year] {
+  margin: 0 0.25em;
+}
+
+/******************************************
+ * Responsive
+ ******************************************/
+
+@media (max-width: 900px) {
+  .page-content__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Increase photo size without thickening the frame */
+.page-about__gallery figure img {
+  width: 320px;     /* adjust: Gallery uses ~260px */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+  .page-about .page-hero[data-section="about-hero"] {
+    padding-top: calc(var(--header-height) + 18px);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-about .testimonials {
+    padding: 32px 0 28px;
+  }
+}
+/* FIX HUGE GAP ON ABOUT PAGE */
+.page-about main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.page-about .page-hero[data-section="about-hero"] {
+  padding-top: calc(var(--header-height) + 10px) !important;
+  margin-top: 0 !important;
+}
+
+.page-about .page-content,
+.page-about .page-hero--testimonials,
+.page-about .testimonials {
+  margin-top: 0 !important;
+  padding-top: 20px !important;
+}
+/* Polaroid styling for About page (match Gallery page) */
+/* TRUE Gallery polaroid styling (bigger version for About) */
+.page-about .poly-frame {
+  background: none;
+  border: 12px solid #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,0.9),
+    0 0 0 6px rgba(23,41,84,0.12),
+    0 15px 35px rgba(2,14,56,0.1);
+  padding: 12px;
+  text-align: center;
+
+  /* bigger size for About page */
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.page-about .poly-frame img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.page-about .poly-frame figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #020e38;
+}
+.page-about .poly-frame {
+  background-clip: padding-box !important;
+}
+/* Remove ghostwhite + grey blend inherited from gallery rules */
+.page-about__gallery figure {
+  background: #ffffff !important;
+  background-blend-mode: normal !important;
+}
+.page-about__gallery figure {
+  background-image: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+

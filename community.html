@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Community | Adam Vincent Hair</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:300" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link id="site-favicon" rel="icon" type="image/png" href="assets/favicon/light-favicon.png" />
+  </head>
+
+  <body class="page-community">
+    <!-- HEADER -->
+    <header class="header-area">
+      <div class="navbar-area">
+        <div class="container">
+          <nav class="site-navbar">
+            <a href="index.html" class="site-logo" aria-label="Homepage">
+              <img
+                id="site-logo" src="./assets/logo/avh-blue.png"
+                alt="Adam Vincent Hair"
+              />
+            </a>
+
+            <!-- You can leave 'Community' out of the nav so the page stays hidden -->
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="about.html">about</a></li>
+              <li><a href="services.html">services</a></li>
+              <li><a href="gallery.html">gallery</a></li>
+              <li><a href="offers.html">offers</a></li>
+              <li><a href="contact.html">contact</a></li>
+              <li><a href="services.html#FAQ">faq</a></li>
+            </ul>
+
+            <button class="nav-toggler">
+              <span></span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main-content" role="main" aria-labelledby="community-title">
+      <!-- HERO -->
+      <section class="page-hero page-hero--community" data-section="community-hero">
+        <div class="container">
+          <span class="page-eyebrow">Community</span>
+          <h1 id="community-title">Local Community Rates</h1>
+          <p class="page-hero__subtitle">
+            A private page for locals, regular guests, and neighbours. Thank you for supporting an
+            independent salon, these rates are just for you.
+          </p>
+        </div>
+      </section>
+
+      <!-- INTRO / WHO IT’S FOR -->
+      <section class="community-intro">
+        <div class="container">
+          <div class="community-intro__grid">
+            <div class="community-intro__copy">
+              <p class="section-eyebrow">A note from Adam</p>
+              <h2>Created with our local community in mind</h2>
+              <p>
+                Thank you for visiting my local community page. As an independentstylist, I have created a unique price guid especially for our community.
+              </p>
+              <p>
+                Please keep this page private and do not share publicly. If you’d like to recommend
+                someone who you feel would benefit, talk to Adam at your next visit. If you are unable to travel to me and require a home visit, I am able to accomodate this to the Wick community.
+              </p>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- COMMUNITY RATES (similar to services pricing cards) -->
+      <section class="community-rates" aria-labelledby="community-rates-title">
+        <div class="container">
+          <header class="community-rates__header">
+            <p class="section-eyebrow">Community Pricing</p>
+            <h2 id="community-rates-title">Sample community rates</h2>
+            <p class="community-rates__intro">
+              Below is a guide to the kind of savings available. Final pricing will depend on hair
+              length, thickness, and the time needed for your service.
+            </p>
+          </header>
+
+          <div class="community-rates__grid">
+            <!-- Card 1 -->
+            <article class="community-rate-card">
+              <h3>Ladies Cut &amp; Finish</h3><br>
+              <p class="community-rate-card__price">Extreme Short £30</p>
+                 <p class="community-rate-card__price">Short - Mid Length £35</p>
+                    <p class="community-rate-card__price">Mid Length - Long £40</p>
+                       <p class="community-rate-card__price">Extra Long Hair £55</p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="community-rate-card">
+              <h3>Styling</h3><br>
+
+              <p class="community-rate-card__price">Wash & Blow dry £30</p>
+               <p class="community-rate-card__price">GHD Styling £20</p><br>
+                <h3>Treatments</h3><br>
+              
+              <p class="community-rate-card__price">Smoothing Treatment from £100</p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="community-rate-card">
+              <h3>Mens Cut</h3><br>
+              <p class="community-rate-card__price">from £30</p><br>
+
+             <h3>Colour</h3><br>
+              <p class="community-rate-card__price">Normal rates apply</p>
+             
+            </article>
+
+            <!-- Card 4 -->
+            <article class="community-rate-card">
+              <h3>MyNewHair Community</h3>
+              <p class="community-rate-card__price">by consultation</p>
+              <p class="community-rate-card__detail">
+                Supportive pricing options for those experiencing medical hair loss and working with
+                MyNewHair.
+              </p>
+              <ul class="community-rate-card__list">
+                <li>Private and discreet appointments</li>
+                <li>Tailored plan for your needs</li>
+                <li>Pricing agreed together in advance</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+   <!-- SERVICE MODAL BUTTONS -->
+<section class="services-modals">
+  <div class="container">
+    <header class="services-modals__header">
+      <p class="section-eyebrow">Further Information</p>
+      <h2>Learn More</h2>
+    </header>
+
+    <div class="services-modals__grid">
+      <button class="services-modal-btn" data-modal="modal-colour">Colour Inspiration</button>
+      <button class="services-modal-btn" data-modal="modal-skin">Skin Test</button>
+      <button class="services-modal-btn" data-modal="modal-mnh">MyNewHair</button>
+      <button class="services-modal-btn" data-modal="modal-ladies">Ladies Cuts</button>
+      <button class="services-modal-btn" data-modal="modal-men">Mens Cuts</button>
+      <button class="services-modal-btn" data-modal="modal-treatments">Treatments</button>
+    </div>
+  </div>
+</section>
+    
+
+      <!-- CTA -->
+      <section class="community-cta">
+        <div class="container">
+          <div class="community-cta__shell">
+            <div class="community-cta__content">
+              <p class="section-eyebrow">Ready to book?</p>
+              <h2>Use your community rate</h2>
+              <p>
+                Mention <strong>"Community Rates"</strong> when you enquire or book so we can make sure
+                the correct pricing is applied to your appointment.
+              </p>
+            </div>
+            <div class="community-cta__actions">
+                <a class="feature-slide__cta" href="contact.html">
+                    <span aria-hidden="true"></span>
+                    Contact the Salon
+                  </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+      <!-- MODAL: COLOUR INSPIRATION -->
+<div class="avh-modal" id="modal-colour">
+  <div class="avh-modal__backdrop" data-close></div>
+  <div class="avh-modal__content">
+    <button class="avh-modal__close" data-close>&times;</button>
+    <h3>Colour Inspiration</h3>
+    <p>Whether you’re looking for a bold change or a natural refresh, I’ll guide you to colour that fits your routine and hair health. As a L'Oreal Colour Specialist, I keep techniques current so your colour looks refined and lasts.</p>
+    <p class="avh-modal__subhead">Things I consider</p>
+    <ul class="avh-modal__list">
+      <li><strong>Tonal drift:</strong> soft root stretch into ombre that grows out beautifully.</li>
+      <li><strong>Multi-tonal effect:</strong> layered shades to add depth and texture.</li>
+      <li><strong>Freehand application:</strong> painted placement for custom dimension.</li>
+      <li><strong>Service time:</strong> how long you’ll be in the chair from application to shampoo.</li>
+      <li><strong>Hair contouring:</strong> face-framing brightness tailored to your features.</li>
+      <li><strong>Base &amp; regrowth:</strong> natural shade, previous colour, and how it grows through.</li>
+      <li><strong>Tint vs gloss:</strong> permanent coverage or semi-permanent shine and tone.</li>
+      <li><strong>Lifting/darkening:</strong> adjusting a couple of shades lighter or deeper with care.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MODAL: SKIN TEST -->
+<div class="avh-modal" id="modal-skin">
+  <div class="avh-modal__backdrop" data-close></div>
+  <div class="avh-modal__content">
+    <button class="avh-modal__close" data-close>&times;</button>
+    <h3>Skin Test</h3>
+    <p>A quick consultation keeps your colour experience safe and comfortable. I follow L'Oreal Professionnel’s protocol to decide when a skin allergy test is required.</p>
+    <p class="avh-modal__subhead">What happens</p>
+    <ul class="avh-modal__list">
+      <li><strong>Professional consult:</strong> we review your colour history and sensitivities.</li>
+      <li><strong>Skin test:</strong> performed when needed to check for allergic response.</li>
+      <li><strong>Application plan:</strong> tailored approach for your service on the day.</li>
+    </ul>
+    <p><strong>A skin allergy test must be completed 48 hours before your appointment.</strong></p>
+  </div>
+</div>
+
+<!-- MODAL: MYNEWHAIR -->
+<div class="avh-modal" id="modal-mnh">
+  <div class="avh-modal__backdrop" data-close></div>
+  <div class="avh-modal__content">
+    <button class="avh-modal__close" data-close>&times;</button>
+    <h3>MyNewHair</h3>
+    <p>MyNewHair services start with a private consultation so we can plan sensitively before cutting begins. <a href="contact.html#contact">Book time together</a> to start the conversation.</p>
+    <p class="avh-modal__subhead">Support &amp; advice</p>
+    <p>MyNewHair exists to support anyone living with medical hair loss. I aim to help you feel informed, confident, and cared for throughout the journey.</p>
+    <p>Learn more at <a href="https://www.mynewhair.org/" target="_blank" rel="noopener">mynewhair.org</a>. To arrange a private visit, please <a href="mailto:adam@adamvincenthair.com">email</a> or call and we’ll plan together.</p>
+  </div>
+</div>
+
+<!-- MODAL: LADIES CUTS -->
+<div class="avh-modal" id="modal-ladies">
+  <div class="avh-modal__backdrop" data-close></div>
+  <div class="avh-modal__content">
+    <button class="avh-modal__close" data-close>&times;</button>
+    <h3>Ladies Cuts</h3>
+    <p>From cropped shapes to long, voluminous layers, I tailor each cut to your face shape, texture, and lifestyle.</p>
+    <p class="avh-modal__subhead">How we work</p>
+    <ul class="avh-modal__list">
+      <li><strong>Shape first:</strong> bobs, layers, or structured crops designed around you.</li>
+      <li><strong>Texture-aware:</strong> adjustments that boost movement, volume, and ease.</li>
+      <li><strong>Maintenance:</strong> visits every 4–6 weeks to keep the cut looking refined.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MODAL: MEN’S CUTS -->
+<div class="avh-modal" id="modal-men">
+  <div class="avh-modal__backdrop" data-close></div>
+  <div class="avh-modal__content">
+    <button class="avh-modal__close" data-close>&times;</button>
+    <h3>Mens Cuts</h3>
+    <p>Precision cuts for everyday wear through to weekend looks, built after a quick consultation on what you need.</p>
+    <p class="avh-modal__subhead">Options</p>
+    <ul class="avh-modal__list">
+      <li><strong>Clean classics:</strong> tidy, low-maintenance shapes for work and travel.</li>
+      <li><strong>Fashion-led:</strong> modern, textured finishes for both short and longer hair.</li>
+      <li><strong>Fit for routine:</strong> styling guidance so the cut works with minimal effort.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MODAL: TREATMENTS -->
+<div class="avh-modal" id="modal-treatments">
+  <div class="avh-modal__backdrop" data-close></div>
+  <div class="avh-modal__content">
+    <button class="avh-modal__close" data-close>&times;</button>
+    <h3>Treatments</h3>
+    <p>I offer tailored smoothing and care treatments to manage frizz, add shine, and keep hair healthy.</p>
+    <p class="avh-modal__subhead">Options</p>
+    <ul class="avh-modal__list">
+      <li><strong>Keratin smooth:</strong> 72-hour treatment with results lasting 8–12 weeks.</li>
+      <li><strong>Same-day system:</strong> amino acid smoothing that also lasts 8–12 weeks.</li>
+      <li><strong>Condition rituals:</strong> in-salon treatments from REDKEN to strengthen and gloss.</li>
+    </ul>
+  </div>
+</div>
+
+
+    <!-- FOOTER -->
+     <!-- 👇 footer is now part of the 3rd screen -->
+      <footer class="site-footer footer-refresh" role="contentinfo">
+        <div class="footer-top-bar">
+          <div class="footer-top-bar__logo">
+            <img
+              src="../../assets/logo/reduced-white-logo.png"
+              alt="Adam Vincent Hair logo"
+              class="footer-logo-img"
+              width="140"
+              height="70"
+            >
+          </div>
+
+          <nav class="footer-page-links" aria-label="Footer navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../about.html">About</a>
+            <a href="../../services.html">Services</a>
+            <a href="../../gallery.html">Gallery</a>
+            <a href="../../offers.html">Offers</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../services.html#FAQ">FAQ</a>
+          </nav>
+        </div>
+
+        <section class="footer-social-section flex-rw" aria-label="Connect with Adam">
+          <div class="footer-social-line footer-social-line--left" aria-hidden="true"></div>
+
+          <div class="footer-social-overlap">
+            <span class="footer-social-connect">
+              CONNECT <span class="footer-social-small">with</span> ADAM
+            </span>
+          </div>
+
+          <div class="footer-social-line footer-social-line--middle" aria-hidden="true"></div>
+
+<div class="footer-social-overlap footer-social-icons-wrapper">
+          <a
+            href="https://www.facebook.com/adamvincenthair"
+            class="generic-anchor"
+            target="_blank"
+            title="Facebook"
+          >
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/adamvincenthair/"
+            class="generic-anchor"
+            target="_blank"
+            title="Instagram"
+          >
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span>
+        </a>
+
+          <a
+            href="https://wa.me/447789755122"
+            class="generic-anchor"
+            target="_blank"
+            title="WhatsApp"
+          >
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            <span class="sr-only">WhatsApp</span>
+          </a>
+
+          <a
+            href="https://www.myglambit.com"
+            class="generic-anchor custom-icon-link"
+            title="Adam Vincent Hair"
+          >
+            <span class="icon-custom" aria-hidden="true"><i class="fa fa-user"></i></span>
+            <span class="sr-only">My GlamBit</span>
+          </a>
+        </div>
+
+          <div class="footer-social-line footer-social-line--right" aria-hidden="true"></div>
+        </section>
+
+      <section class="footer-bottom-section flex-rw">
+  <div class="footer-bottom-wrapper footer-bottom-wrapper--left footer-bottom-highlight">
+    &copy; <span data-footer-year></span>
+    <a class="footer-bottom-link" href="https://www.adamvincenthair.com" target="_blank" rel="noopener">Adam Vincent Hair</a>
+    | All Rights Reserved
+  </div>
+
+  <div class="footer-bottom-wrapper footer-bottom-wrapper--right">
+    Created by
+    <a class="footer-bottom-link" href="#" target="_blank" rel="noopener">The Yard</a>
+    &copy; <span data-footer-year></span> | All Rights Reserved
+  </div>
+</section>
+
+      </footer>
+    </section>  <!-- end .page-screen--contact -->
+  </main>
+
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const openButtons = document.querySelectorAll(".services-modal-btn");
+  const modals = document.querySelectorAll(".avh-modal");
+
+  // Open modal
+  openButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-modal");
+      const modal = document.getElementById(target);
+      if (modal) modal.classList.add("active");
+    });
+  });
+
+  // Close modal on backdrop or X button
+  modals.forEach(modal => {
+    modal.addEventListener("click", e => {
+      if (e.target.hasAttribute("data-close") || 
+          e.target.classList.contains("avh-modal")) {
+        modal.classList.remove("active");
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>

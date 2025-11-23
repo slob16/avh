@@ -1,0 +1,652 @@
+/******************************************
+ * PAGE: SERVICES – LAYOUT & HERO
+ ******************************************/
+
+.page-services main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--header-height) + 30px);
+  padding-bottom: 40px;
+  gap: 40px;
+}
+
+/* Hero wrapper */
+.page-services .page-hero.page-hero--services {
+  padding: 0 0 32px;
+  color: var(--color-hero-text);
+}
+
+.page-services .page-hero--services .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page-services .page-hero--services .page-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: var(--color-navbar-text);
+}
+
+.page-services .page-hero--services h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.page-services .page-hero--services .page-hero__subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+/******************************************
+ * SHARED EYEBROW & CTA
+ ******************************************/
+
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 12px;
+  color: var(--color-navbar-text);
+  margin-bottom: 18px;
+}
+
+/* CTA buttons reused inside this page */
+.feature-slide__cta {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: #172954;
+  text-decoration: none;
+  padding: 12px 32px;
+  border-radius: 0;
+  border: 1px solid rgba(23, 41, 84, 0.65);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.feature-slide__cta span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(23, 41, 84, 0.95), rgba(2, 14, 56, 0.95));
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.feature-slide__cta:hover {
+  color: #f8fbfd;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2, 14, 56, 0.35);
+}
+
+.feature-slide__cta:hover span {
+  width: 260%;
+  height: 260%;
+}
+
+/******************************************
+ * SERVICES – PRICING GRID & CARDS
+ ******************************************/
+
+.services-pricing {
+  padding: 10px 0 40px;
+}
+
+.services-pricing .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.services-pricing__header {
+  max-width: 640px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.services-pricing__header .section-eyebrow {
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.services-pricing__header h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  margin: 0 0 20px;
+}
+
+.services-pricing__intro {
+  color: var(--color-text-muted);
+  max-width: 520px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.services-pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Card core */
+.services-pricing__card {
+  padding: 16px;
+  background: linear-gradient(to bottom right, #f8fbfd, #b4b7c3);
+  border: 12px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(170px, 210px);
+  gap: 14px;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.services-pricing__card h3 {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  color: var(--color-navbar-text);
+}
+
+.services-pricing__price {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-hero-text);
+}
+
+/* Copy section inside card */
+.services-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* List of services and prices */
+.services-pricing__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.services-pricing__list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.services-pricing__list li + li {
+  margin-top: 4px;
+}
+
+.services-pricing__list li span {
+  margin-left: auto;
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--color-hero-text);
+}
+
+/* Image column for cards – ensures card images show correctly */
+.services-card__media {
+  display: flex;
+  align-items: stretch;
+}
+
+.services-card__frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom left, #f8fbfd, #b4b7c3);
+  border: 12px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  min-height: 160px;
+  max-height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-card__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CTA card at end of grid */
+.services-pricing__card--cta {
+  grid-template-columns: minmax(0, 1fr);
+  text-align: center;
+  padding: 28px 22px 24px;
+  align-content: center;
+}
+
+.services-card__cta-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.services-card__cta-copy h3 {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0;
+}
+
+.services-card__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services-card__actions .feature-slide__cta {
+  min-width: 160px;
+  text-align: center;
+}
+
+/******************************************
+ * SERVICES – MODAL BUTTON GRID
+ ******************************************/
+
+.services-modals {
+  padding: 20px 0 40px;
+}
+
+.services-modals .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.services-modals__header {
+  max-width: 870px;
+  margin: 0 auto 20px;
+}
+
+.services-modals__header .section-eyebrow {
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.services-modals__header h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  margin: 0;
+}
+
+/* Buttons that open modals */
+.services-modals__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;     /* centres the rows */
+  gap: 20px 40px;              /* vertical and horizontal spacing */
+  max-width: 960px;
+  margin: 0 auto 24px;
+}
+
+.services-modal-btn {
+  display: inline-block;
+  white-space: nowrap;         /* prevents shrinking */
+}
+
+.services-modal-btn {
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--color-hero-text);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 14, 56, 0.15);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 0 6px rgba(2, 14, 56, 0.12),
+    0 15px 35px rgba(2, 14, 56, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 3px rgba(248, 251, 253, 1),
+    0 0 0 6px rgba(23, 41, 84, 0.25),
+    0 18px 40px rgba(2, 14, 56, 0.18);
+}
+
+/******************************************
+ * SERVICES – FAQ / ACCORDION
+ ******************************************/
+
+.services-faq {
+  padding: 10px 0 20px;
+}
+
+.services-faq .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.services-faq__header {
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto 16px;
+}
+
+.services-faq__header .section-eyebrow {
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.services-faq__header h2 {
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  margin: 0;
+}
+
+/* Accordion core */
+.accordion {
+  list-style: none;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 1px solid var(--color-grid-line);
+}
+
+.accordion li {
+  border-bottom: 1px solid var(--color-grid-line);
+  padding: 0;
+}
+
+/* Question row */
+.accordion li > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--color-hero-text);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Arrow indicator for FAQ rows */
+.accordion li > a::after {
+  content: "+";
+  font-weight: 400;
+  margin-left: 12px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.7;
+}
+
+/* Answer text */
+.accordion li > p {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, padding-bottom 0.25s ease;
+}
+
+/* Open state */
+.accordion li.is-open > a::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+.accordion li.is-open > p {
+  max-height: 200px;
+  padding-bottom: 10px;
+}
+
+/******************************************
+ * SERVICES – MODAL WINDOWS
+ ******************************************/
+
+.avh-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+.avh-modal.active {
+  display: flex;
+}
+
+.avh-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+/* Modal content where all text and any inline images would appear */
+.avh-modal__content {
+  position: relative;
+  max-width: 520px;
+  width: 92%;
+  max-height: 90vh;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 14, 56, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: "Open Sans", sans-serif;
+  overflow-y: auto;
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.95),
+    0 0 0 8px rgba(2, 14, 56, 0.15),
+    0 20px 40px rgba(2, 14, 56, 0.2);
+  animation: modalFade 0.25s ease-out;
+}
+
+.avh-modal__content h3 {
+  margin: 0;
+  padding-bottom: 4px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-hero-text);
+}
+
+.avh-modal__content p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* If you drop any inline images into the modal body they will be constrained here */
+.avh-modal__content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.avh-modal__subhead {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.avh-modal__list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.avh-modal__list strong {
+  color: var(--color-hero-text);
+}
+
+.avh-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-hero-text);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.avh-modal__close:hover {
+  opacity: 1;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/******************************************
+ * RESPONSIVE – SERVICES PAGE
+ ******************************************/
+
+@media (max-width: 900px) {
+  .page-services main {
+    gap: 32px;
+  }
+
+  .services-pricing .container,
+  .services-modals .container,
+  .services-faq .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-pricing__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .services-pricing__card {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .services-card__frame {
+    min-height: 180px;
+  }
+
+  .accordion li > a {
+    align-items: flex-start;
+  }
+
+  .page-services .page-hero--services .container > * {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-modal-btn {
+    font-size: 12px;
+    padding: 12px 14px;
+    letter-spacing: 0.1em;
+  }
+
+  .services-pricing__card {
+    padding: 14px;
+    border-width: 10px;
+  }
+
+  .services-card__frame {
+    border-width: 10px;
+  }
+
+  .avh-modal__content {
+    padding: 22px;
+  }
+}
+/* ---------------------------------------- */
+/* RESPONSIVE OVERRIDES FOR MODALS GRID     */
+/* ---------------------------------------- */
+
+
+@media (max-width: 900px) {
+  .services-modal-btn {
+    flex: 0 0 calc(50% - 20px);   /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .services-modal-btn {
+    flex: 0 0 100%;               /* 1 per row */
+    max-width: none;
+  }
+}
+
+/* Remove all unwanted background boxes on the Services page */
+.page-services main,
+.page-services section,
+.page-services .container,
+.page-services .services-pricing,
+.page-services .services-modals,
+.page-services .services-faq {
+  background: transparent !important;
+}
+
+/* Also remove inherited grey backgrounds */
+.page-services .services-pricing__header,
+.page-services .services-modals__header,
+.page-services .services-faq__header {
+  background: transparent !important;
+}
+
+/* Make sure the main wrapper does not create its own block */
+.page-services #main-content {
+  background: transparent !important;
+}
+
