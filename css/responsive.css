@@ -718,3 +718,89 @@
     min-height: 0;
   }
 }
+
+/* Hero / feature swiper height fix on mobile */
+
+@media (max-width: 768px) {
+  .feature-section,
+  .feature-wrapper,
+  .feature-swiper,
+  .feature-swiper .swiper,
+  .feature-swiper .swiper-wrapper,
+  .feature-swiper .swiper-slide {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .page-hero,
+  .page-hero--home,
+  .page-hero--feature {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+}
+
+/* Steps / flip cards and Find Us layout fix on mobile */
+
+@media (max-width: 768px) {
+  /* Let the whole page stack and scroll naturally */
+  html,
+  body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Any full-screen page sections should become natural height */
+  .page-screen,
+  .page-screen--home,
+  .page-screen--index,
+  .page-screen--contact {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Steps area: stack cards and keep them above other sections */
+  .steps-section,
+  .approach-section,
+  .steps-grid,
+  .step-cards {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    margin: 0 1.25rem 2rem 1.25rem;
+  }
+
+  .step-card {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  /* Find Us and map should not float over the steps */
+  .find-us,
+  .contact-map,
+  .contact-shell,
+  .contact-map__inner {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    margin: 0 1.25rem 2rem 1.25rem;
+    z-index: 1;
+  }
+
+  .contact-map__frame iframe {
+    width: 100%;
+    height: 280px;
+  }
+}
+
