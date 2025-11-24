@@ -61,6 +61,15 @@ function initFeatureSwiper() {
       delay: FEATURE_AUTOPLAY_DELAY,
       disableOnInteraction: false,
     },
+    allowTouchMove: true,
+    grabCursor: true,
+    simulateTouch: true,
+    breakpoints: {
+      769: {
+        slidesPerView: 1,
+        allowTouchMove: true,
+      },
+    },
   });
 
   const resetDotAnimation = (dot, active) => {
@@ -156,11 +165,9 @@ function initHeaderScrollState() {
 
 initHeaderScrollState();
 
- // Step cards flip on click
-
-document.querySelectorAll('.step-card').forEach(card => {
+// Step cards flip on click
+document.querySelectorAll('.step-card').forEach((card) => {
   card.addEventListener('click', () => {
     card.classList.toggle('is-flipped');
   });
 });
-
