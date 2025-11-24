@@ -829,3 +829,33 @@
   }
 }
 
+/* Force burger colour (closed and open) on mobile */
+
+@media (max-width: 768px) {
+  .nav-toggler span,
+  .nav-toggler span::before,
+  .nav-toggler span::after,
+  .nav-toggler.toggler-open span,
+  .nav-toggler.toggler-open span::before,
+  .nav-toggler.toggler-open span::after {
+    background-color: #18274f !important;
+  }
+}
+
+/* Make all FAQ accordion text consistent on mobile (including last item) */
+
+@media (max-width: 768px) {
+  #FAQ .accordion li a,
+  #FAQ .accordion li p {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+  }
+
+  #FAQ .accordion li a {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+  }
+}
+
