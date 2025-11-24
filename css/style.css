@@ -3390,6 +3390,8 @@ html {
 .contact-social__link--twitter { color: #1da1f2; }
 .contact-social__link--whatsapp { color: #25d366; }
 .contact-social__link--brand { color: #172954; }
+.contact-social__link--email:hover { color: #8db9ed;
+}
 
 /* Right side – info panel */
 .contact-panel__info {
