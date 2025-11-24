@@ -182,7 +182,7 @@
     height: 40px;
     cursor: pointer;
   }
-
+   
   .nav-toggler span,
   .nav-toggler span::before,
   .nav-toggler span::after {
@@ -191,8 +191,10 @@
     width: 22px;
     height: 2px;
     margin: 0;
+    background-color: #18274f;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
+
 
   .nav-toggler span::before {
     transform: translateY(-6px);
@@ -526,6 +528,25 @@
   }
 }
 
+/* Centre contact panel on mobile */
+
+@media (max-width: 768px) {
+  .contact-shell .container {
+    display: block;
+  }
+
+  .contact-panel {
+    max-width: 640px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .contact-social,
+  .contact-panel__info {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* =========================================
    Find us and map layout
    ========================================= */
@@ -637,6 +658,8 @@
    FAQ text consistency (services.html)
    ========================================= */
 
+/* FAQ text consistency (services.html) */
+
 @media (max-width: 768px) {
   .faq-item,
   .faq-item p,
@@ -652,6 +675,24 @@
     font-size: 1rem;
   }
 }
+
+/* Ensure all FAQ content (including last note) matches */
+
+@media (max-width: 768px) {
+  .faq,
+  .faq * {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .faq h3,
+  .faq h4 {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+  }
+}
+
 
 /* =========================================
    Buttons and misc mobile tweaks
@@ -826,6 +867,22 @@
     display: block !important;
   }
 
+   /* Reset spacing and positioning in partners + approach */
+  .page-screen--partners {
+    margin: 0 !important;
+  }
+   
+   .logo-marquee,
+  .approach {
+    position: static !important;
+    margin: 2rem 0 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .approach__header {
+    text-align: center;
+    margin-bottom: 1.5rem !important;
+  }
   /* Hero / feature slider wrapper follows its content height */
   .feature-slider,
   .feature-swiper-shell {
