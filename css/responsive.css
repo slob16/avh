@@ -14,110 +14,46 @@
 
   .container {
     width: 95%;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .row,
-  .grid,
-  .columns {
-    gap: 1.5rem;
-  }
-}
-
-/* Mobile primary breakpoint */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-
   section,
-  .page-screen,
-  .container {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+  .page-screen {
+    padding: 3rem 1.5rem;
   }
 
-  h1 {
-    font-size: 1.9rem;
+  .page-hero {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  h1,
+  .page-hero h1 {
+    font-size: 2.3rem;
     line-height: 1.2;
   }
 
   h2 {
-    font-size: 1.6rem;
-    line-height: 1.3;
+    font-size: 1.8rem;
   }
 
-  h3 {
-    font-size: 1.3rem;
-    line-height: 1.3;
-  }
-
-  p,
-  li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .row,
-  .grid,
-  .columns,
-  .flex-row {
-    display: block;
-  }
-
-  .card,
-  .pricing-card,
-  .box,
-  .feature-card,
-  .testimonial-card,
-  figure,
-  .polaroid {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .page-screen {
-    padding: 3rem 1.25rem;
+  .section-eyebrow,
+  .page-eyebrow {
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
   }
 }
 
-/* Tiny devices */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
-  .page-screen {
-    padding: 2.5rem 1rem;
-  }
-}
-
-/* Extra global safety net */
+/* Mobile base reset */
 @media (max-width: 768px) {
-  img {
-    max-width: 100%;
-    height: auto;
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
   }
 
   .container,
@@ -143,6 +79,23 @@
     left: 0;
     right: 0;
     z-index: 50;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-area {
+    padding: 0.5rem 0;
+  }
+
+  .site-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-logo img {
+    max-width: 140px;
+    height: auto;
   }
 
   body {
@@ -182,7 +135,7 @@
     height: 40px;
     cursor: pointer;
   }
-   
+
   .nav-toggler span,
   .nav-toggler span::before,
   .nav-toggler span::after {
@@ -194,7 +147,6 @@
     background-color: #18274f;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
-
 
   .nav-toggler span::before {
     transform: translateY(-6px);
@@ -209,276 +161,395 @@
   }
 
   .nav-toggler.toggler-open span::before {
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateX(-6px);
   }
 
   .nav-toggler.toggler-open span::after {
     opacity: 0;
   }
-}
 
-@media (max-width: 768px) {
-  html,
-  body {
-    height: auto;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+  .site-navbar ul a {
+    color: #ffffff;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
 
-  main,
-  .page-wrapper,
-  .content-wrapper {
+  .site-navbar ul a:hover {
+    color: #d8f744;
+  }
+}
+
+/* =========================================
+   Home hero / feature slider
+   ========================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .page-screen--hero {
+    padding: 5rem 1.5rem 3rem 1.5rem;
+  }
+
+  .feature-slider {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-screen--hero {
+    padding: 5.5rem 1.25rem 2.5rem 1.25rem;
+  }
+
+  .hero-shell {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feature-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .feature-swiper-shell {
+    width: 100%;
+    height: auto;
+  }
+
+  .feature-swiper .swiper-slide {
+    height: auto;
+  }
+
+  .feature-slide {
+    padding: 1.75rem 1.25rem 2.25rem 1.25rem;
+  }
+
+  .feature-slide__title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .feature-slide__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-slide__body {
+    font-size: 0.95rem;
+  }
+
+  .feature-swiper__controls {
+    margin-top: 1.25rem;
+  }
+
+  .feature-progress-dots {
+    justify-content: center;
+  }
+
+  .feature-swiper__arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================================
+   Steps / approach section on home
+   ========================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .approach {
+    padding: 3rem 1.5rem;
+  }
+
+  .steps-layout {
+    grid-template-columns: 1.2fr 1.3fr;
+    gap: 2rem;
+  }
+
+  .step-card {
+    transform: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .approach {
+    padding: 3rem 1.25rem 2.5rem 1.25rem;
+  }
+
+  .approach__header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .steps-layout {
+    display: block;
+  }
+
+  .steps-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .step-card__inner,
+  .step-card__front,
+  .step-card__back {
+    min-height: 200px;
+  }
+
+  .step-card__front h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* =========================================
+   Find us and map layout (home)
+   ========================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .find-us__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .find-us {
+    padding: 1.5rem 1.25rem 2rem 1.25rem;
+  }
+
+  .page-screen--home,
+  .page-screen--index {
     height: auto;
     min-height: 0;
     overflow: visible;
   }
+
+  .find-us__header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .find-us__layout {
+    display: block;
+  }
+
+  .find-card,
+  .find-us__single {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .find-us__map {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .find-card__body {
+    font-size: 0.95rem;
+  }
+
+  .find-us__single h3 {
+    font-size: 1.3rem;
+  }
 }
 
 /* =========================================
-   Feature swiper and hero behaviour
+   Global card / gallery sizing
    ========================================= */
 
-/* Tablet and down */
-@media (max-width: 1024px) {
-  .feature-swiper {
+@media (max-width: 768px) {
+  .card-grid,
+  .services-pricing__grid,
+  .gallery-grid,
+  .testimonial-grid,
+  .box-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card,
+  .pricing-card,
+  .box,
+  .feature-card,
+  .testimonial-card,
+  figure,
+  .polaroid {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
   }
 
-  .feature-swiper .swiper {
-    width: 100%;
-  }
-
-  .feature-swiper .swiper-wrapper {
-    align-items: stretch;
-  }
-
-  .feature-swiper .swiper-slide {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+  .page-screen {
+    padding: 3rem 1.25rem;
   }
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .feature-swiper {
-    margin-inline: 0;
+/* =========================================
+   Services page: pricing cards and modals
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .services-pricing__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
   }
 
-  .feature-swiper .swiper-slide {
+  .services-pricing__card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-pricing {
+    padding: 3rem 1.25rem 2.5rem 1.25rem;
+  }
+
+  .services-pricing__header {
+    text-align: center;
+  }
+
+  .services-pricing__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .services-pricing__card {
     display: flex;
     flex-direction: column;
+  }
+
+  .services-card__media {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .services-card__frame img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .services-card__cta-copy h3 {
+    font-size: 1.4rem;
+  }
+
+  .services-card__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .services-card__actions .feature-slide__cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .services-modals__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .services-modal-btn {
+    width: 100%;
+  }
+
+  .avh-modal__content {
+    max-width: 95%;
+    margin: 4.5rem auto 2rem auto;
+  }
+}
+
+/* =========================================
+   FAQ accordion (services)
+   ========================================= */
+
+@media (max-width: 768px) {
+  .services-faq {
+    padding: 3rem 1.25rem 3.5rem 1.25rem;
+  }
+
+  .services-faq__header {
+    text-align: left;
+  }
+
+  .accordion {
+    margin-top: 1.75rem;
+  }
+
+  .accordion li > a {
+    font-size: 0.98rem;
+    padding: 0.85rem 0;
+  }
+
+  .accordion li p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================
+   About: polaroids and content
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    display: block;
+  }
+
+  .about-copy {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-about__gallery {
     justify-content: center;
-    padding: 2rem 1.25rem;
-    text-align: center;
   }
 
-  .feature-swiper .feature-slide__content {
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-swiper img,
-  .feature-swiper .feature-slide__image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .feature-swiper__arrow--prev,
-  .feature-swiper__arrow--next {
-    width: 32px;
-    height: 32px;
-    top: auto;
-    bottom: 1.5rem;
-  }
-
-  .feature-swiper__arrow--prev {
-    left: 1.25rem;
-  }
-
-  .feature-swiper__arrow--next {
-    right: 1.25rem;
-  }
-
-  .feature-swiper__pagination,
-  .feature-swiper .swiper-pagination {
-    bottom: 1rem;
+  .page-about__gallery figure {
+    margin: 0 auto 1.5rem auto;
   }
 }
 
 /* =========================================
-   Footer stacking
-   ========================================= */
-
-@media (max-width: 768px) {
-  .site-footer {
-    padding: 2rem 1.25rem;
-  }
-
-  .footer-inner {
-    max-width: 100%;
-  }
-
-  .footer-columns {
-    display: block;
-  }
-
-  .footer-column {
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .footer-column:last-child {
-    margin-bottom: 0;
-  }
-
-  .footer-nav,
-  .footer-social {
-    text-align: center;
-  }
-
-  .footer-nav ul,
-  .footer-social ul {
-    padding: 0;
-    margin: 0.75rem 0 0;
-    list-style: none;
-  }
-
-  .footer-nav li,
-  .footer-social li {
-    display: inline-block;
-    margin: 0 0.4rem;
-  }
-
-  .footer-bottom {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-size: 0.8rem;
-  }
-}
-
-/* =========================================
-   Services cards
+   Gallery layout
    ========================================= */
 
 @media (max-width: 1024px) {
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .services-grid {
-    display: block;
-  }
-
-  .service-card,
-  .pricing-card {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-    box-sizing: border-box;
-  }
-
-  .service-card:last-child,
-  .pricing-card:last-child {
-    margin-bottom: 0;
-  }
-}
-
-/* Steps / flip cards on index */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .steps-grid,
-  .step-cards,
-  .steps-layout {
-    display: grid;
+  .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .steps-grid,
-  .step-cards,
-  .steps-layout {
-    display: block;
+    gap: 0.75rem;
   }
 
-  .step-card {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-    box-sizing: border-box;
-  }
-
-  .step-card:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Make sure the flip inner wrapper can size itself */
-  .step-card__inner {
-    width: 100%;
-    height: 100%;
-  }
-
-  /* If the 3D flip is too fragile on small screens you can soften it */
-  .step-card.is-flipped .step-card__inner {
-    /* keep your existing transform here if you already have it */
-  }
-}
-
-/* =========================================
-   About page polaroids
-   ========================================= */
-
-@media (max-width: 1024px) {
-  .page-about__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-
-  .page-polaroid {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-about__gallery {
-    display: block;
-  }
-
-  .page-polaroid {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-    transform-origin: center top;
-  }
-
-  .page-about__gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .page-polaroid:last-child {
-    margin-bottom: 0;
-  }
-
-  .page-polaroid {
-    animation-duration: calc(var(--swing-duration) * 1.5);
+  .gallery-grid figure {
+    margin: 0;
   }
 }
 
@@ -500,7 +571,7 @@
 
 @media (max-width: 768px) {
   .page-screen--contact {
-    padding: 3rem 1.25rem;
+    padding: 2rem 0 1.5rem 0;
   }
 
   .page-screen--contact .contact-layout,
@@ -509,303 +580,109 @@
     display: block;
   }
 
-  .page-screen--contact .contact-form,
-  .page-screen--contact .contact-details {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.75rem;
+  .page-hero--contact {
+    padding: 5.5rem 1.25rem 2.5rem 1.25rem;
   }
 
-  .page-screen--contact .contact-details:last-child {
-    margin-bottom: 0;
-  }
-
-  .page-screen--contact input,
-  .page-screen--contact textarea,
-  .page-screen--contact button {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-/* Centre contact panel on mobile */
-
-@media (max-width: 768px) {
-  .contact-shell .container {
-    display: block;
+  .contact-shell {
+    padding: 0 1.25rem 2rem 1.25rem;
   }
 
   .contact-panel {
-    max-width: 640px;
-    margin: 0 auto 2rem auto;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .contact-social,
   .contact-panel__info {
     width: 100%;
-    max-width: 100%;
+  }
+
+  .contact-map {
+    padding: 0 1.25rem 2.5rem 1.25rem;
+  }
+
+  .contact-map__inner h2 {
+    text-align: left;
+  }
+
+  .contact-map__frame iframe {
+    width: 100%;
+    height: 280px;
   }
 }
 
 /* =========================================
-   Find us and map layout
+   Footer stacking
    ========================================= */
 
 @media (max-width: 1024px) {
-  .find-us__layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  .footer-top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-page-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-bar {
+    padding: 2rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .footer-page-links a {
+    font-size: 0.8rem;
+    margin: 0.2rem 0.5rem;
+  }
+
+  .footer-social-section {
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 768px) {
-  .find-us {
-    padding: 3rem 1.25rem;
   }
 
-     .page-screen--home,
-  .page-screen--index {
-    height: auto;
-    min-height: 0;
-    overflow: visible;
+  .footer-social-line {
+    width: 100%;
   }
 
-
-  .find-us__header {
+  .footer-social-overlap {
     text-align: center;
-    margin-bottom: 1.75rem;
   }
 
-  .find-us__layout {
-    display: block;
-  }
-
-  .find-card,
-  .find-us__single {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .find-us__map {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .find-us__map iframe {
-    width: 100%;
-    height: 280px;
-    border: 0;
-  }
-
-  .find-card__address,
-  .find-card__contact {
-    font-size: 0.95rem;
-  }
-
-  .find-card__contact span {
-    display: block;
-  }
-}
-
-/* Find us and map layout */
-
-@media (max-width: 768px) {
-  .find-us {
-    position: static;
-  }
-
-  .find-us__layout {
-    position: static;
-  }
-
-  /* already have these but keep all together */
-  .find-us {
-    padding: 3rem 1.25rem;
-  }
-
-  .find-us__header {
+  .footer-bottom-section {
+    flex-direction: column;
+    gap: 0.5rem;
     text-align: center;
-    margin-bottom: 1.75rem;
-  }
-
-  .find-us__layout {
-    display: block;
-  }
-
-  .find-card,
-  .find-us__single {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .find-us__map {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .find-us__map iframe {
-    width: 100%;
-    height: 280px;
-    border: 0;
   }
 }
 
 /* =========================================
-   FAQ text consistency (services.html)
-   ========================================= */
-
-/* FAQ text consistency (services.html) */
-
-@media (max-width: 768px) {
-  .faq-item,
-  .faq-item p,
-  .faq-item li,
-  .faq-item h3 {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    font-weight: 400;
-  }
-
-  .faq-item h3 {
-    font-weight: 600;
-    font-size: 1rem;
-  }
-}
-
-/* Ensure all FAQ content (including last note) matches */
-
-@media (max-width: 768px) {
-  .faq,
-  .faq * {
-    font-family: "Open Sans", sans-serif !important;
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-  }
-
-  .faq h3,
-  .faq h4 {
-    font-weight: 600 !important;
-    font-size: 1rem !important;
-  }
-}
-
-
-/* =========================================
-   Buttons and misc mobile tweaks
+   Final mobile fixes for index and contact
    ========================================= */
 
 @media (max-width: 768px) {
-  .btn,
-  .button,
-  .cta-button,
-  .btn-primary {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    padding-block: 0.85rem;
-  }
-
-  .section-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-  }
-
-  .hero-content,
-  .hero-layout,
-  .hero-grid {
-    display: block;
-    text-align: center;
-  }
-
-  .hero-image,
-  .hero-media {
-    margin: 1.5rem auto 0;
-  }
-
-  .testimonial-list {
-    display: block;
-  }
-
-  .testimonial-card {
-    margin-bottom: 1.5rem;
-  }
-
-  .testimonial-card:last-child {
-    margin-bottom: 0;
-  }
-}
-
-/* Feature / hero height fix on mobile */
-
-@media (max-width: 768px) {
-  .feature-section,
-  .feature-swiper,
-  .feature-swiper .swiper,
-  .feature-swiper .swiper-wrapper,
-  .feature-swiper .swiper-slide {
-    height: auto;
-    min-height: 0;
-  }
-
-  /* If your hero section wraps the swiper, include those too */
-  .hero,
-  .page-screen--hero {
-    height: auto;
-    min-height: 0;
-  }
-}
-
-/* Hero / feature swiper height fix on mobile */
-
-@media (max-width: 768px) {
-  .feature-section,
-  .feature-wrapper,
-  .feature-swiper,
-  .feature-swiper .swiper,
-  .feature-swiper .swiper-wrapper,
-  .feature-swiper .swiper-slide {
+  .scroll-stack {
     height: auto !important;
     min-height: 0 !important;
     overflow: visible !important;
   }
 
-  .page-hero,
-  .page-hero--home,
-  .page-hero--feature {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-  }
-}
-
-/* Steps / flip cards and Find Us layout fix on mobile */
-
-@media (max-width: 768px) {
-  /* Let the whole page stack and scroll naturally */
-  html,
-  body {
-    height: auto !important;
-    min-height: 100% !important;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  /* Any full-screen page sections should become natural height */
   .page-screen,
-  .page-screen--home,
-  .page-screen--index,
+  .page-screen--hero,
+  .page-screen--partners,
   .page-screen--contact {
     height: auto !important;
     min-height: 0 !important;
     overflow: visible !important;
+    padding: 2.5rem 1.25rem !important;
+    display: block !important;
   }
 
-  /* Steps area: stack cards and keep them above other sections */
   .steps-section,
   .approach-section,
   .steps-grid,
@@ -826,7 +703,6 @@
     z-index: 2;
   }
 
-  /* Find Us and map should not float over the steps */
   .find-us,
   .contact-map,
   .contact-shell,
@@ -845,88 +721,37 @@
   }
 }
 
-/* Final mobile fixes for index and contact */
-
+/* Centre contact panel on mobile */
 @media (max-width: 768px) {
-  /* Let the main stack behave like a normal page */
-  .scroll-stack {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
+  .contact-shell .container {
+    display: block;
   }
 
-  /* Each page-screen becomes natural height, not forced full-screen */
-  .page-screen,
-  .page-screen--hero,
-  .page-screen--partners,
-  .page-screen--contact {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-    padding: 2.5rem 1.25rem !important;
-    display: block !important;
+  .contact-panel {
+    max-width: 640px;
+    margin: 0 auto 2rem auto;
   }
 
-   /* Reset spacing and positioning in partners + approach */
-  .page-screen--partners {
-    margin: 0 !important;
+  .contact-social,
+  .contact-panel__info {
+    width: 100%;
+    max-width: 100%;
   }
-   
-   .logo-marquee,
-  .approach {
-    position: static !important;
-    margin: 2rem 0 0 0 !important;
-    padding: 0 !important;
+}
+
+/* Make absolutely everything in the FAQ section consistent on mobile */
+@media (max-width: 768px) {
+  #FAQ,
+  #FAQ * {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
   }
 
-  .approach__header {
-    text-align: center;
-    margin-bottom: 1.5rem !important;
-  }
-  /* Hero / feature slider wrapper follows its content height */
-  .feature-slider,
-  .feature-swiper-shell {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-  }
-
-  /* Steps / approach section */
-  .approach {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-
-  .steps-cards {
-    display: block !important;
-    margin-top: 1.5rem !important;
-  }
-
-  .steps-cards .step-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 1.5rem !important;
-    position: relative !important;
-    box-sizing: border-box !important;
-    z-index: 1 !important;
-  }
-
-  /* Find Us section sits below the steps, full width, not overlapping */
-  .find-us {
-    position: static !important;
-    margin-top: 2rem !important;
-    padding-top: 2.5rem !important;
-  }
-
-  .find-us__layout {
-    display: block !important;
-  }
-
-  .find-card,
-  .find-us__single,
-  .find-us__map {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 1.5rem !important;
+  #FAQ h2,
+  #FAQ h3,
+  #FAQ h4 {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
   }
 }
