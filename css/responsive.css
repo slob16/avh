@@ -24,7 +24,6 @@
     display: block;
   }
 
-  /* Generic grids and rows */
   .row,
   .grid,
   .columns {
@@ -50,7 +49,6 @@
     box-sizing: border-box;
   }
 
-  /* Headings scale down slightly */
   h1 {
     font-size: 1.9rem;
     line-height: 1.2;
@@ -72,7 +70,6 @@
     line-height: 1.5;
   }
 
-  /* Generic utility to stack flex layouts vertically */
   .row,
   .grid,
   .columns,
@@ -80,7 +77,6 @@
     display: block;
   }
 
-  /* Generic cards and boxes */
   .card,
   .pricing-card,
   .box,
@@ -93,7 +89,6 @@
     box-sizing: border-box;
   }
 
-  /* Space around sections */
   .page-screen {
     padding: 3rem 1.25rem;
   }
@@ -118,69 +113,187 @@
   }
 }
 
-/* =========================================
-   Navbar collapse
-   Assumes structure similar to:
-   .site-header .header-inner .logo + .main-nav .main-nav__list
-   ========================================= */
-
+/* Extra global safety net */
 @media (max-width: 768px) {
-  .site-header {
-    position: relative;
-    z-index: 20;
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
-  .header-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 1.25rem;
+  .container,
+  section,
+  .page-screen {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
-  .logo {
-    margin: 0;
-  }
-
-  .main-nav {
-    width: 100%;
-  }
-
-  .main-nav__list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .main-nav__list li {
-    width: auto;
-  }
-
-  .main-nav__list a {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    text-align: center;
+  body {
+    overflow-x: hidden;
   }
 }
 
-/* Optional collapsed width for mid tablets if your header is tight */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .header-inner {
-    padding-inline: 1.5rem;
+/* =========================================
+   Mobile navbar and toggler
+   ========================================= */
+
+@media (max-width: 768px) {
+  .header-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
   }
 
-  .main-nav__list {
-    gap: 1rem;
+  body {
+    padding-top: 70px;
+  }
+
+  .site-navbar ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    background: rgba(10, 10, 15, 0.96);
+    padding: 0.75rem 1.25rem 1.25rem;
+    list-style: none;
+  }
+
+  .site-navbar ul.open {
+    display: flex;
+  }
+
+  .site-navbar ul li {
+    margin: 0.4rem 0;
+  }
+
+  .site-navbar ul a {
+    display: block;
+    text-align: center;
+  }
+
+  .nav-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .nav-toggler span,
+  .nav-toggler span::before,
+  .nav-toggler span::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-toggler span::before {
+    transform: translateY(-6px);
+  }
+
+  .nav-toggler span::after {
+    transform: translateY(6px);
+  }
+
+  .nav-toggler.toggler-open span {
+    transform: rotate(45deg);
+  }
+
+  .nav-toggler.toggler-open span::before {
+    transform: rotate(-90deg);
+  }
+
+  .nav-toggler.toggler-open span::after {
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   Feature swiper and hero behaviour
+   ========================================= */
+
+/* Tablet and down */
+@media (max-width: 1024px) {
+  .feature-swiper {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .feature-swiper .swiper {
+    width: 100%;
+  }
+
+  .feature-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .feature-swiper .swiper-slide {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .feature-swiper {
+    margin-inline: 0;
+  }
+
+  .feature-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .feature-swiper .feature-slide__content {
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-swiper img,
+  .feature-swiper .feature-slide__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .feature-swiper__arrow--prev,
+  .feature-swiper__arrow--next {
+    width: 32px;
+    height: 32px;
+    top: auto;
+    bottom: 1.5rem;
+  }
+
+  .feature-swiper__arrow--prev {
+    left: 1.25rem;
+  }
+
+  .feature-swiper__arrow--next {
+    right: 1.25rem;
+  }
+
+  .feature-swiper__pagination,
+  .feature-swiper .swiper-pagination {
+    bottom: 1rem;
   }
 }
 
 /* =========================================
    Footer stacking
-   Assumes footer has: .site-footer, .footer-inner, .footer-columns, .footer-bottom
    ========================================= */
 
 @media (max-width: 768px) {
@@ -232,7 +345,6 @@
 
 /* =========================================
    Services cards
-   Assumes a grid: .services-grid with .service-card
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -253,26 +365,17 @@
     width: 100%;
     max-width: 100%;
     margin-bottom: 1.5rem;
+    box-sizing: border-box;
   }
 
   .service-card:last-child,
   .pricing-card:last-child {
     margin-bottom: 0;
   }
-
-  .service-card__header,
-  .pricing-card__header {
-    text-align: left;
-  }
-
-  .service-card__price {
-    font-size: 1.1rem;
-  }
 }
 
 /* =========================================
    About page polaroids
-   Assumes gallery wrapper .page-about__gallery, items .page-about__gallery figure
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -281,6 +384,11 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
   }
+
+  .page-polaroid {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -288,20 +396,11 @@
     display: block;
   }
 
-  .page-about__gallery figure {
+  .page-polaroid {
     width: 100%;
     max-width: 100%;
-    margin: 0 0 1.5rem 0;
-  }
-
-  .page-about__gallery figure:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Calmer tilt for mobile if you are rotating polaroids */
-  .page-about__gallery figure:nth-child(odd),
-  .page-about__gallery figure:nth-child(even) {
-    transform: none;
+    margin-bottom: 1.5rem;
+    transform-origin: center top;
   }
 
   .page-about__gallery img {
@@ -309,19 +408,18 @@
     height: auto;
     display: block;
   }
-}
 
-/* If you have a separate swing animation class, dampen it on mobile */
-@media (max-width: 768px) {
-  .polaroid-swing {
-    animation-duration: 6s;
-    transform-origin: center top;
+  .page-polaroid:last-child {
+    margin-bottom: 0;
+  }
+
+  .page-polaroid {
+    animation-duration: calc(var(--swing-duration) * 1.5);
   }
 }
 
 /* =========================================
    Contact layout
-   Assumes page-screen with id screen-contact and a two column contact layout
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -329,14 +427,16 @@
     width: 95%;
   }
 
-  .page-screen--contact form {
-    width: 100%;
+  .page-screen--contact .contact-layout,
+  .page-screen--contact .contact-grid,
+  .page-screen--contact .row {
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .page-screen--contact {
-    padding-top: 3rem;
+    padding: 3rem 1.25rem;
   }
 
   .page-screen--contact .contact-layout,
@@ -349,7 +449,7 @@
   .page-screen--contact .contact-details {
     width: 100%;
     max-width: 100%;
-    margin: 0 0 1.75rem 0;
+    margin-bottom: 1.75rem;
   }
 
   .page-screen--contact .contact-details:last-child {
@@ -365,13 +465,7 @@
 }
 
 /* =========================================
-   Find us / map layout
-   Assumes:
-     section.find-us
-       .find-us__header
-       .find-us__layout
-         .find-us__single (card)
-         .find-us__map (map wrapper or iframe)
+   Find us and map layout
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -397,8 +491,8 @@
     display: block;
   }
 
-  .find-us__single,
-  .find-card {
+  .find-card,
+  .find-us__single {
     width: 100%;
     max-width: 100%;
     margin-bottom: 1.5rem;
@@ -426,8 +520,7 @@
 }
 
 /* =========================================
-   Buttons and CTAs
-   Make sure clickable areas are full width on small screens
+   Buttons and misc mobile tweaks
    ========================================= */
 
 @media (max-width: 768px) {
@@ -446,13 +539,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.14em;
   }
-}
 
-/* =========================================
-   Misc small cleanups for mobile
-   ========================================= */
-
-@media (max-width: 768px) {
   .hero-content,
   .hero-layout,
   .hero-grid {
@@ -475,101 +562,5 @@
 
   .testimonial-card:last-child {
     margin-bottom: 0;
-  }
-}
-
-/* Hero swiper responsive tweaks */
-
-/* Tablet and down */
-@media (max-width: 1024px) {
-  .hero,
-  .hero-swiper {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .hero-swiper {
-    overflow: hidden;
-  }
-
-  .hero-swiper .swiper {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-swiper .swiper-wrapper {
-    align-items: stretch;
-  }
-
-  .hero-swiper .swiper-slide {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Make hero content stack nicely */
-  .hero-content {
-    padding: 2.5rem 1.5rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 4.5rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero-swiper {
-    width: 100%;
-  }
-
-  .hero-swiper .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 1.5rem;
-    text-align: center;
-  }
-
-  .hero-swiper .hero-text {
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-swiper .hero-image,
-  .hero-swiper img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  /* Make arrows and dots finger friendly */
-  .hero-swiper .swiper-button-prev,
-  .hero-swiper .swiper-button-next {
-    width: 32px;
-    height: 32px;
-    margin-top: 0;
-    top: auto;
-    bottom: 1.5rem;
-  }
-
-  .hero-swiper .swiper-button-prev {
-    left: 1.2rem;
-  }
-
-  .hero-swiper .swiper-button-next {
-    right: 1.2rem;
-  }
-
-  .hero-swiper .swiper-pagination {
-    bottom: 1rem;
-  }
-
-  .hero-swiper .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
   }
 }
