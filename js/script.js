@@ -27,12 +27,14 @@ function allEventListners() {
 
 // togglerClick function
 function togglerClick() {
+  if (!navToggler || !navMenu) return;
   navToggler.classList.toggle('toggler-open');
   navMenu.classList.toggle('open');
 }
 
 // navLinkClick function
 function navLinkClick() {
+  if (!navMenu || !navToggler) return;
   if (navMenu.classList.contains('open')) {
     navToggler.click();
   }
