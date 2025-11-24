@@ -804,3 +804,72 @@
   }
 }
 
+/* Final mobile fixes for index and contact */
+
+@media (max-width: 768px) {
+  /* Let the main stack behave like a normal page */
+  .scroll-stack {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Each page-screen becomes natural height, not forced full-screen */
+  .page-screen,
+  .page-screen--hero,
+  .page-screen--partners,
+  .page-screen--contact {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 2.5rem 1.25rem !important;
+    display: block !important;
+  }
+
+  /* Hero / feature slider wrapper follows its content height */
+  .feature-slider,
+  .feature-swiper-shell {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Steps / approach section */
+  .approach {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .steps-cards {
+    display: block !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .steps-cards .step-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    z-index: 1 !important;
+  }
+
+  /* Find Us section sits below the steps, full width, not overlapping */
+  .find-us {
+    position: static !important;
+    margin-top: 2rem !important;
+    padding-top: 2.5rem !important;
+  }
+
+  .find-us__layout {
+    display: block !important;
+  }
+
+  .find-card,
+  .find-us__single,
+  .find-us__map {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
