@@ -215,6 +215,24 @@
   }
 }
 
+@media (max-width: 768px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  main,
+  .page-wrapper,
+  .content-wrapper {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+}
+
 /* =========================================
    Feature swiper and hero behaviour
    ========================================= */
@@ -374,6 +392,50 @@
   }
 }
 
+/* Steps / flip cards on index */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .steps-grid,
+  .step-cards,
+  .steps-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .steps-grid,
+  .step-cards,
+  .steps-layout {
+    display: block;
+  }
+
+  .step-card {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .step-card:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Make sure the flip inner wrapper can size itself */
+  .step-card__inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* If the 3D flip is too fragile on small screens you can soften it */
+  .step-card.is-flipped .step-card__inner {
+    /* keep your existing transform here if you already have it */
+  }
+}
+
 /* =========================================
    About page polaroids
    ========================================= */
@@ -482,6 +544,14 @@
     padding: 3rem 1.25rem;
   }
 
+     .page-screen--home,
+  .page-screen--index {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+
   .find-us__header {
     text-align: center;
     margin-bottom: 1.75rem;
@@ -516,6 +586,70 @@
 
   .find-card__contact span {
     display: block;
+  }
+}
+
+/* Find us and map layout */
+
+@media (max-width: 768px) {
+  .find-us {
+    position: static;
+  }
+
+  .find-us__layout {
+    position: static;
+  }
+
+  /* already have these but keep all together */
+  .find-us {
+    padding: 3rem 1.25rem;
+  }
+
+  .find-us__header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .find-us__layout {
+    display: block;
+  }
+
+  .find-card,
+  .find-us__single {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .find-us__map {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .find-us__map iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+  }
+}
+
+/* =========================================
+   FAQ text consistency (services.html)
+   ========================================= */
+
+@media (max-width: 768px) {
+  .faq-item,
+  .faq-item p,
+  .faq-item li,
+  .faq-item h3 {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .faq-item h3 {
+    font-weight: 600;
+    font-size: 1rem;
   }
 }
 
@@ -562,5 +696,25 @@
 
   .testimonial-card:last-child {
     margin-bottom: 0;
+  }
+}
+
+/* Feature / hero height fix on mobile */
+
+@media (max-width: 768px) {
+  .feature-section,
+  .feature-swiper,
+  .feature-swiper .swiper,
+  .feature-swiper .swiper-wrapper,
+  .feature-swiper .swiper-slide {
+    height: auto;
+    min-height: 0;
+  }
+
+  /* If your hero section wraps the swiper, include those too */
+  .hero,
+  .page-screen--hero {
+    height: auto;
+    min-height: 0;
   }
 }
