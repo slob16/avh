@@ -1,1 +1,575 @@
+/* =========================================
+   Global responsive rules
+   ========================================= */
 
+/* Tablet and down */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Generic grids and rows */
+  .row,
+  .grid,
+  .columns {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile primary breakpoint */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section,
+  .page-screen,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Headings scale down slightly */
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  p,
+  li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Generic utility to stack flex layouts vertically */
+  .row,
+  .grid,
+  .columns,
+  .flex-row {
+    display: block;
+  }
+
+  /* Generic cards and boxes */
+  .card,
+  .pricing-card,
+  .box,
+  .feature-card,
+  .testimonial-card,
+  figure,
+  .polaroid {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Space around sections */
+  .page-screen {
+    padding: 3rem 1.25rem;
+  }
+}
+
+/* Tiny devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .page-screen {
+    padding: 2.5rem 1rem;
+  }
+}
+
+/* =========================================
+   Navbar collapse
+   Assumes structure similar to:
+   .site-header .header-inner .logo + .main-nav .main-nav__list
+   ========================================= */
+
+@media (max-width: 768px) {
+  .site-header {
+    position: relative;
+    z-index: 20;
+  }
+
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .main-nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .main-nav__list li {
+    width: auto;
+  }
+
+  .main-nav__list a {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Optional collapsed width for mid tablets if your header is tight */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .header-inner {
+    padding-inline: 1.5rem;
+  }
+
+  .main-nav__list {
+    gap: 1rem;
+  }
+}
+
+/* =========================================
+   Footer stacking
+   Assumes footer has: .site-footer, .footer-inner, .footer-columns, .footer-bottom
+   ========================================= */
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1.25rem;
+  }
+
+  .footer-inner {
+    max-width: 100%;
+  }
+
+  .footer-columns {
+    display: block;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-column:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer-nav,
+  .footer-social {
+    text-align: center;
+  }
+
+  .footer-nav ul,
+  .footer-social ul {
+    padding: 0;
+    margin: 0.75rem 0 0;
+    list-style: none;
+  }
+
+  .footer-nav li,
+  .footer-social li {
+    display: inline-block;
+    margin: 0 0.4rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================
+   Services cards
+   Assumes a grid: .services-grid with .service-card
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    display: block;
+  }
+
+  .service-card,
+  .pricing-card {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card:last-child,
+  .pricing-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .service-card__header,
+  .pricing-card__header {
+    text-align: left;
+  }
+
+  .service-card__price {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================
+   About page polaroids
+   Assumes gallery wrapper .page-about__gallery, items .page-about__gallery figure
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .page-about__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-about__gallery {
+    display: block;
+  }
+
+  .page-about__gallery figure {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .page-about__gallery figure:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Calmer tilt for mobile if you are rotating polaroids */
+  .page-about__gallery figure:nth-child(odd),
+  .page-about__gallery figure:nth-child(even) {
+    transform: none;
+  }
+
+  .page-about__gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* If you have a separate swing animation class, dampen it on mobile */
+@media (max-width: 768px) {
+  .polaroid-swing {
+    animation-duration: 6s;
+    transform-origin: center top;
+  }
+}
+
+/* =========================================
+   Contact layout
+   Assumes page-screen with id screen-contact and a two column contact layout
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .page-screen--contact .container {
+    width: 95%;
+  }
+
+  .page-screen--contact form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-screen--contact {
+    padding-top: 3rem;
+  }
+
+  .page-screen--contact .contact-layout,
+  .page-screen--contact .contact-grid,
+  .page-screen--contact .row {
+    display: block;
+  }
+
+  .page-screen--contact .contact-form,
+  .page-screen--contact .contact-details {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.75rem 0;
+  }
+
+  .page-screen--contact .contact-details:last-child {
+    margin-bottom: 0;
+  }
+
+  .page-screen--contact input,
+  .page-screen--contact textarea,
+  .page-screen--contact button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* =========================================
+   Find us / map layout
+   Assumes:
+     section.find-us
+       .find-us__header
+       .find-us__layout
+         .find-us__single (card)
+         .find-us__map (map wrapper or iframe)
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .find-us__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .find-us {
+    padding: 3rem 1.25rem;
+  }
+
+  .find-us__header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .find-us__layout {
+    display: block;
+  }
+
+  .find-us__single,
+  .find-card {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .find-us__map {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .find-us__map iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+  }
+
+  .find-card__address,
+  .find-card__contact {
+    font-size: 0.95rem;
+  }
+
+  .find-card__contact span {
+    display: block;
+  }
+}
+
+/* =========================================
+   Buttons and CTAs
+   Make sure clickable areas are full width on small screens
+   ========================================= */
+
+@media (max-width: 768px) {
+  .btn,
+  .button,
+  .cta-button,
+  .btn-primary {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding-block: 0.85rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+/* =========================================
+   Misc small cleanups for mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+  .hero-content,
+  .hero-layout,
+  .hero-grid {
+    display: block;
+    text-align: center;
+  }
+
+  .hero-image,
+  .hero-media {
+    margin: 1.5rem auto 0;
+  }
+
+  .testimonial-list {
+    display: block;
+  }
+
+  .testimonial-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Hero swiper responsive tweaks */
+
+/* Tablet and down */
+@media (max-width: 1024px) {
+  .hero,
+  .hero-swiper {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-swiper {
+    overflow: hidden;
+  }
+
+  .hero-swiper .swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .hero-swiper .swiper-slide {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Make hero content stack nicely */
+  .hero-content {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-swiper {
+    width: 100%;
+  }
+
+  .hero-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .hero-swiper .hero-text {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-swiper .hero-image,
+  .hero-swiper img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Make arrows and dots finger friendly */
+  .hero-swiper .swiper-button-prev,
+  .hero-swiper .swiper-button-next {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+    top: auto;
+    bottom: 1.5rem;
+  }
+
+  .hero-swiper .swiper-button-prev {
+    left: 1.2rem;
+  }
+
+  .hero-swiper .swiper-button-next {
+    right: 1.2rem;
+  }
+
+  .hero-swiper .swiper-pagination {
+    bottom: 1rem;
+  }
+
+  .hero-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}
